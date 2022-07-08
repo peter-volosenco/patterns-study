@@ -57,6 +57,10 @@ const PubSubClass = function () {
      *    @return {type description }
      */
     unsub: function (handle, completly) {
+      console.log('unsub', handle, completly);
+      console.log('cache', this.cache);
+      console.log('cache', JSON.stringify(this.cache));
+
       var t = handle[0],
         i = this.cache[t].length - 1;
 
