@@ -1,5 +1,7 @@
 import { Between } from 'spec-pattern';
 
+import pubSub from './pubsub2';
+
 const rating = new Between(1, 5);
 
 console.log(rating.isSatisfiedBy(3)); // true
@@ -12,3 +14,5 @@ import './style.css';
 
 let appDiv = document.getElementById('app');
 appDiv.innerHTML = `<h1>Specification Pattern</h1>`;
+
+console.log(pubSub);
