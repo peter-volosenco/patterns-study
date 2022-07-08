@@ -1,6 +1,6 @@
 import { Between } from 'spec-pattern';
 
-import pubSub from './pubsub2';
+import psp from './pubSubPattern2';
 
 const rating = new Between(1, 5);
 
@@ -15,4 +15,18 @@ import './style.css';
 let appDiv = document.getElementById('app');
 appDiv.innerHTML = `<h1>Specification Pattern</h1>`;
 
-console.log(pubSub);
+console.log(psp);
+
+function pageLoaded(args) {
+  console.log('pageload with args', args);
+
+  psp.unsub(['/page/loaded'], true);
+}
+
+psp.sub('/page/loaded', pageLoaded);
+
+let payload = { x: 0 };
+psp.pub('/page/loaded', [payload]);
+
+payload = { x: 1 };
+psp.pub('/page/loaded', [payload]);
