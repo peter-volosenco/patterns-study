@@ -11,4 +11,4 @@ console.log('test');
 import './style.css';
 
 let appDiv = document.getElementById('app');
-appDiv.innerHTML = `<h1>Specification example</h1>`;
+appDiv.innerHTML = `<h1>Specification Pattern</h1>`;
