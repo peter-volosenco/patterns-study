@@ -37,6 +37,25 @@ class ProductFilter {
 }
 
 // specification
+class Specification {
+  constructor() {
+    if (this.constructor.name === 'Specification')
+      throw new Error('Specification is abstract');
+  }
+
+  isSatisfied(item) {}
+}
+
+class ColorSpecification2 extends Specification {
+  constructor(color) {
+    this.color = color;
+  }
+
+  // isSatisfied(item) {
+  //   return item.color === this.color;
+  // }
+}
+
 class ColorSpecification {
   constructor(color) {
     this.color = color;
