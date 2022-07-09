@@ -7,6 +7,7 @@ let appDiv = document.getElementById('app');
 appDiv.innerHTML = `<h1>Specification Pattern</h1>`;
 
 window.jQuery = jQuery;
+window.$ = jQuery;
 
 (function ($) {
   let o = $({});
