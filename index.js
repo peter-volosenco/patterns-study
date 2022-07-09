@@ -43,7 +43,9 @@ class Specification {
       throw new Error('Specification is abstract');
   }
 
-  isSatisfied(item) {}
+  isSatisfied(item) {
+    console.log('isSatisfied derived');
+  }
 }
 
 class ColorSpecification2 extends Specification {
@@ -51,9 +53,9 @@ class ColorSpecification2 extends Specification {
     this.color = color;
   }
 
-  // isSatisfied(item) {
-  //   return item.color === this.color;
-  // }
+  isSatisfied(item) {
+    return item.color === this.color;
+  }
 }
 
 class ColorSpecification {
