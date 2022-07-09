@@ -10,7 +10,8 @@ window.psp = psp;
 
 //subscribe
 function loadPage() {
-  // psp.unsub('/page/loaded', pageLoaded);
-
-  console.log('pageload with args', args);
+  let stage = document.getElementById('stage');
+  stage.innerHTML = page;
 }
+
+loadPage();
