@@ -12,6 +12,15 @@ window.psp = psp;
 function loadPage() {
   let stage = document.getElementById('stage');
   stage.innerHTML = page;
+
+  setTimeout(() => {
+    let payload = {
+      url: '',
+      name: 'homepage',
+    };
+
+    psp.pub('/page/loaded', [payload]);
+  }, 200);
 }
 
 loadPage();
