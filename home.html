@@ -1,0 +1,12 @@
+<p>Home - Sub page loaded</p>
+
+<script>
+  psp.sub('/page/loaded', pageLoaded);
+
+  //subscribe
+  function pageLoaded(args) {
+    psp.unsub('/page/loaded', pageLoaded);
+
+    console.log('pageload with args', args);
+  }
+</script>
