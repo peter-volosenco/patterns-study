@@ -1,12 +1,14 @@
 <p>Home - Sub page loaded</p>
 
 <script>
-  psp.sub('/page/loaded', pageLoaded);
+  console.log('script tag');
 
-  //subscribe
-  function pageLoaded(args) {
-    psp.unsub('/page/loaded', pageLoaded);
+  $.subscribe('/page/loaded', pageLoaded);
+
+  function pageLoaded(args, payload) {
+    $.unsubscribe('/page/loaded', pageLoaded);
 
     console.log('pageload with args', args);
+    console.log('pageload with payload', payload);
   }
 </script>

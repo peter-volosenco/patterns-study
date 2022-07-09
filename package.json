@@ -3,6 +3,7 @@
   "version": "0.0.0",
   "private": true,
   "dependencies": {
-    "spec-pattern": "^3.5.0"
+    "spec-pattern": "^3.5.0",
+    "jquery": "^3.1.1"
   }
 }

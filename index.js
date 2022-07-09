@@ -1,17 +1,32 @@
 // Import stylesheets
 import './style.css';
-import psp from './pubSubPattern2';
 import page from './home.html';
+import jQuery from 'jquery';
 
 let appDiv = document.getElementById('app');
 appDiv.innerHTML = `<h1>Specification Pattern</h1>`;
 
-window.psp = psp;
+window.jQuery = jQuery;
+
+(function ($) {
+  let o = $({});
+
+  $.subscribe = function () {
+    o.on.apply(o, arguments);
+  };
+
+  $.unsubscribe = function () {
+    o.off.apply(o, arguments);
+  };
+
+  $.publish = function () {
+    o.trigger.apply(o, arguments);
+  };
+})(jQuery);
 
 //subscribe
 function loadPage() {
-  let stage = document.getElementById('stage');
-  stage.innerHTML = page;
+  $('#stage').html(page);
 
   setTimeout(() => {
     let payload = {
@@ -19,7 +34,7 @@ function loadPage() {
       name: 'homepage',
     };
 
-    psp.pub('/page/loaded', [payload]);
+    $.publish('/page/loaded', [payload]);
   }, 200);
 }
 
